@@ -1,0 +1,56 @@
+STATUS: SOLVED
+---------------
+Zero Symbols: ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, BuildID[sha1]=e3bfdbbd4598b8996c08df30ab02691f3765b4f5, for GNU/Linux 3.2.0, stripped
+
+fa32ff07e87c35f0f9972e4ac7610731  Zero Symbols
+
+rabin2
+----------------
+arch     x86
+baddr    0x0
+binsz    12633
+bintype  elf
+bits     64
+canary   false
+injprot  false
+class    ELF64
+compiler GCC: (Debian 12.2.0-14) 12.2.0
+crypto   false
+endian   little
+havecode true
+intrp    /lib64/ld-linux-x86-64.so.2
+laddr    0x0
+lang     c
+linenum  false
+lsyms    false
+machine  AMD x86-64 architecture
+nx       true
+os       linux
+pic      true
+relocs   false
+relro    partial
+rpath    NONE
+sanitize false
+static   false
+stripped true
+subsys   linux
+va       true
+-----------------
+
+act:
+	- takes in password
+		- cuts input at any newline & replace w/ null terminator (cuts the string)
+		- calls FUN_001011c4(input)
+			- calls FUN_00101169(input)
+			- returns if FUN_00101169(input) == 0x9e52fca7 (-1638728537 if signed or 2656238759 if unsigned)
+				- starts with c=5381 (0x1505), loops & xors c with input[i] & multiply by 33
+				- returns c
+	- gives right/wrong
+
+
+password is 64 (0x40) characters long max
+
+main @ 0x0x5555555551f6
+
+reversed with z3
+solution: sol.py

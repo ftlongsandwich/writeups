@@ -1,0 +1,44 @@
+rock-paper-scissors: ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, for GNU/Linux 3.2.0, stripped
+
+97d83d10304e733a8d8aa9340552166e  rock-paper-scissors
+
+rabin2
+--------------------------------------------------------
+arch     x86
+baddr    0x0
+binsz    12623
+bintype  elf
+bits     64
+canary   true
+injprot  false
+class    ELF64
+compiler GCC: (Gentoo 13.3.1_p20240614 p17) 13.3.1 20240614
+crypto   false
+endian   little
+havecode true
+intrp    /lib64/ld-linux-x86-64.so.2
+laddr    0x0
+lang     c
+linenum  false
+lsyms    false
+machine  AMD x86-64 architecture
+nx       true
+os       linux
+pic      true
+relocs   false
+relro    full
+rpath    NONE
+sanitize false
+static   false
+stripped true
+subsys   linux
+va       true
+--------------------------------------------------------
+
+0x...557 a loop starts w/ round_num at 0 increasing up to 8
+	0x...667 fgets is called & stored in local_68*
+	0x...680 input cut at newline w/ \0 using strcspn
+	0x...6a7 strcmp invoked, compare local_68* to "rock", result stored in iVar2*
+		if (local_68*=="rock")
+			0x...604 iVar2* stored at local_98* w/ offset of roundnum bytes (local_98* + round_num*4)
+			0x...6f9 FUN_00101268*() called, stored in iVar2*

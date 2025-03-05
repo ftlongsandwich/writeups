@@ -1,0 +1,42 @@
+crackme: ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, BuildID[sha1]=02cf8f3b6c8f180abd20f79fa63f56b40bca5b93, for GNU/Linux 3.2.0, not stripped
+
+c59736e8154f616fe043174b3efd8209  crackme
+
+rabin2
+------------------------------------------------------------------
+arch     x86
+baddr    0x0
+binsz    14409
+bintype  elf
+bits     64
+canary   true
+injprot  false
+class    ELF64
+compiler GCC: (Ubuntu 9.4.0-1ubuntu1~20.04.2) 9.4.0
+crypto   false
+endian   little
+havecode true
+intrp    /lib64/ld-linux-x86-64.so.2
+laddr    0x0
+lang     c
+linenum  true
+lsyms    true
+machine  AMD x86-64 architecture
+nx       true
+os       linux
+pic      true
+relocs   true
+relro    full
+rpath    NONE
+sanitize false
+static   false
+stripped false
+subsys   linux
+va       true
+
+main stack-frame size: 0x38
+
+takes 2 glibc arguments, takes 1 cmd line arg
+
+input has to be at least length of 4
+
